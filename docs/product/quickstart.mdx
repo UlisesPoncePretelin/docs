@@ -1,0 +1,38 @@
+---
+title: Inicio rápido (local)
+description: Levantar el gestor con Docker en tu máquina.
+---
+
+## Requisitos
+
+- Docker Desktop o Docker Engine + Compose
+- Acceso al repositorio privado (colaborador autorizado)
+
+## Arranque
+
+```bash
+cp infra/.env.example infra/.env
+cp backend/.env.example backend/.env
+docker compose -f infra/docker-compose.yml up --build
+```
+
+| Servicio      | URL                        |
+| ------------- | -------------------------- |
+| App           | http://localhost:3002      |
+| API / Swagger | http://localhost:8002/docs |
+
+**Login local:** `admin@local.com` / `Admin12345!`
+
+## Semillas (solo desarrollo)
+
+```bash
+docker exec clinical_backend python -m app.cli seed reference
+docker exec clinical_backend python -m app.cli seed demo
+```
+
+## Verificación
+
+```bash
+docker exec clinical_backend python -m pytest tests/ -v
+pnpm --dir frontend build
+```

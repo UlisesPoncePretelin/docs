@@ -1,0 +1,22 @@
+---
+title: Arquitectura
+description: Stack y capas del gestor clínico.
+---
+
+## Stack
+
+| Capa               | Tecnología                                        |
+| ------------------ | ------------------------------------------------- |
+| Backend            | FastAPI, SQLAlchemy, Alembic, PostgreSQL          |
+| Frontend           | Next.js 15 App Router, TypeScript, TanStack Query |
+| Orquestación local | Docker Compose (`:3002` / `:8002`)                |
+
+## Tenancy
+
+Datos clínicos filtrados siempre por `organization_id`. Tests de backend usan SQLite aislado en memoria (no Postgres de desarrollo).
+
+## Documentación técnica en repo
+
+- `ARCHITECTURE.md` — vista general
+- `CONTEXT.md` — lenguaje ubiquo
+- `docs/api-contract.md` — contrato API

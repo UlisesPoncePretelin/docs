@@ -1,0 +1,17 @@
+---
+title: Despliegue
+description: Self-hosted y nube multi-clínica.
+---
+
+## Modos
+
+1. **Self-hosted (una clínica):** `infra/docker-compose.yml`
+2. **Nube multi-clínica:** base `infra/docker-compose.cloud.yml` — cada clínica es una `organization_id` aislada.
+
+## Checklist
+
+- Variables en `.env` (nunca en git): `SECRET_KEY`, `DATABASE_URL`, claves Stripe/Meta/Gemini según módulos activos.
+- Migraciones: `alembic upgrade head` antes de exponer tráfico.
+- Health: `GET /health` y `GET /health/ready`.
+
+Guía completa: [deployment.md](https://github.com/UlisesPoncePretelin/Poncepretelin/blob/main/docs/deployment.md) en el repo.

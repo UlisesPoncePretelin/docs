@@ -1,0 +1,23 @@
+---
+title: Contribuir
+description: Flujo de trabajo para colaboradores con acceso al repo privado.
+---
+
+## Requisitos
+
+- Python 3.12, Node 22, pnpm 9
+- Docker para integración local
+- Cobertura backend ≥ 58% (`pytest.ini`)
+
+## Commits
+
+Formato convencional: `feat:`, `fix:`, `docs:`, `test:`, `chore:`.
+
+## Antes de PR
+
+```bash
+docker exec clinical_backend python -m pytest tests/ -v
+pnpm --dir frontend build
+```
+
+No commitear `.env`, `pgdata/`, uploads ni secretos. Ver `CONTRIBUTING.md` en el repositorio.
