@@ -8,16 +8,31 @@
     "dark": "#084A35"
   },
   "favicon": "/favicon.svg",
-  "navigation": [
-    {
-      "group": "Empezar",
-      "pages": ["docs/product/introduction", "docs/product/quickstart", "docs/product/demo-cloud"]
-    },
-    {
-      "group": "Operación",
-      "pages": ["docs/product/deployment", "docs/product/architecture", "docs/product/contributing"]
-    }
-  ],
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guía",
+        "groups": [
+          {
+            "group": "Empezar",
+            "pages": [
+              "docs/product/introduction",
+              "docs/product/quickstart",
+              "docs/product/demo-cloud"
+            ]
+          },
+          {
+            "group": "Operación",
+            "pages": [
+              "docs/product/deployment",
+              "docs/product/architecture",
+              "docs/product/contributing"
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "footer": {
     "socials": {
       "website": "https://poncepretelin.com",
